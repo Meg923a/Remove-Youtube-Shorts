@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove YouTube Shorts
 // @namespace    https://github.com/Meg923a
-// @version      0.1
+// @version      0.2
 // @description  A simple script to remove Youtube shorts.
 // @author       Meg923a
 // @match        *://*.youtube.com/*
@@ -10,17 +10,18 @@
 (() => {
     const removeShorts = () => {
         const shortsTab = document.querySelectorAll(".style-scope:nth-child(1) > #items > .style-scope:nth-child(2) > #endpoint");
-        shortsTab.forEach((element) => {
-            element.remove();
-        });
+        const mainPageShorts = document.querySelectorAll("[is-shorts]");
+        const watchPageShorts = document.querySelectorAll("ytd-reel-shelf-renderer");
+        const searchPageShorts = document.querySelectorAll("ytd-video-renderer:has(div > ytd-thumbnail > a[href*='shorts'])");
 
-        const mainPageShortsElements = document.querySelectorAll("[is-shorts]");
-        mainPageShortsElements.forEach((element) => {
-            element.remove();
-        });
+        const shortsElements = [
+            ...shortsTab,
+            ...mainPageShorts,
+            ...watchPageShorts,
+            ...searchPageShorts
+        ];
 
-        const watchPageShortsElements = document.querySelectorAll("ytd-reel-shelf-renderer");
-        watchPageShortsElements.forEach((element) => {
+        shortsElements.forEach((element) => {
             element.remove();
         });
     };
