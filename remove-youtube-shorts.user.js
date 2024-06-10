@@ -9,7 +9,7 @@
 // ==/UserScript==
 (() => {
     const removeShorts = () => {
-        const shortsTab = document.querySelectorAll(".style-scope:nth-child(1) > #items > .style-scope:nth-child(2) > #endpoint");
+        const shortsTab = document.querySelectorAll(".style-scope:nth-child(1) > #items > .style-scope:nth-child(2) > #endpoint, .ytd-mini-guide-renderer:nth-child(2) > #endpoint");
         const mainPageShorts = document.querySelectorAll("[is-shorts]");
         const watchPageShorts = document.querySelectorAll("ytd-reel-shelf-renderer");
         const searchPageShorts = document.querySelectorAll("ytd-video-renderer:has(div > ytd-thumbnail > a[href*='shorts'])");
