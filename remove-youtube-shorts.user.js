@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove YouTube Shorts
 // @namespace    https://github.com/Meg923a
-// @version      0.2
+// @version      2025-01-26
 // @description  A simple script to remove Youtube shorts.
 // @author       Meg923a
 // @match        *://*.youtube.com/*
@@ -31,7 +31,7 @@
         ];
 
         shortsElements.forEach((element) => {
-            element.remove();
+            element.style = "display: none !important;";
         });
     };
 
